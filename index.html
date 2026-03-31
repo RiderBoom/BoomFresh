@@ -152,23 +152,24 @@
         .story-image-container {
             position: relative;
             background: white;
-            padding: 20px;
+            padding: 40px;
             border-radius: 2rem;
             box-shadow: 0 20px 50px rgba(0,0,0,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 300px;
+            min-height: 350px;
+            margin-bottom: 2rem; /* เพิ่มระยะห่างด้านล่างกันทับซ้อน */
         }
         
         .signature-badge {
             position: absolute;
-            bottom: -24px;
-            right: -24px;
+            bottom: -20px;
+            right: 20px; /* ปรับตำแหน่งให้อยู่ในขอบเขตที่เหมาะสม */
             background: var(--deep-blue);
             color: white;
-            padding: 2rem;
-            border-radius: 2rem;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
             box-shadow: 0 15px 35px rgba(2, 62, 138, 0.3);
             display: flex;
             flex-direction: column;
@@ -248,47 +249,55 @@
     </section>
 
     <!-- เรื่องราว (Story) -->
-    <section id="story" class="py-24 bg-white">
+    <section id="story" class="py-24 bg-white overflow-visible">
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2">
+                <!-- ฝั่งรูปภาพ/โลโก้ -->
+                <div class="lg:w-1/2 w-full">
                     <div class="story-image-container bg-blue-50/50">
-                        <!-- ปรับปรุง: นำแท็ก img ที่โหลดไม่ขึ้นออก และใช้ SVG Icon เป็นตัวแทนที่ดูหรูหราแทน -->
-                        <div class="flex flex-col items-center justify-center space-y-4">
-                            <svg width="120" height="120" viewBox="0 0 100 100" class="drop-shadow-xl">
+                        <div class="flex flex-col items-center justify-center space-y-6">
+                            <!-- Logo SVG -->
+                            <svg width="140" height="140" viewBox="0 0 100 100" class="drop-shadow-2xl">
                                 <path d="M50 5 L90 25 L90 75 L50 95 L10 75 L10 25 Z" fill="#023e8a"/>
                                 <path d="M50 15 L80 30 L80 70 L50 85 L20 70 L20 30 Z" fill="#0077b6" opacity="0.5"/>
                                 <text x="50" y="65" font-family="Arial" font-size="40" fill="white" text-anchor="middle" font-weight="900">B</text>
                             </svg>
-                            <p class="text-blue-900 font-black tracking-[0.2em] uppercase text-xl">BOOM FRESH</p>
+                            <div class="text-center">
+                                <p class="text-blue-900 font-black tracking-[0.3em] uppercase text-2xl mb-1">BOOM FRESH</p>
+                                <p class="text-gray-400 text-[10px] font-bold tracking-[0.5em] uppercase">Premium Drinking Water</p>
+                            </div>
                         </div>
                         
-                        <div class="signature-badge hidden md:flex">
-                            <svg width="80" height="40" viewBox="0 0 100 50" class="mb-2">
-                                <path d="M10,40 Q30,10 50,40 T90,10" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-                                <circle cx="90" cy="10" r="4" fill="#caf0f8" />
+                        <!-- Signature Badge -->
+                        <div class="signature-badge">
+                            <svg width="60" height="30" viewBox="0 0 100 50" class="mb-1">
+                                <path d="M10,40 Q30,10 50,40 T90,10" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
                             </svg>
-                            <p class="text-xs uppercase tracking-[0.2em] font-bold text-blue-100">Boom Fresh Founder</p>
+                            <p class="text-[10px] uppercase tracking-[0.2em] font-black text-blue-100">BOOM FOUNDER</p>
                         </div>
                     </div>
                 </div>
-                <div class="lg:w-1/2">
-                    <h2 class="text-blue-600 font-bold text-xs tracking-[0.4em] mb-4 uppercase">The Origin</h2>
-                    <h3 class="text-4xl font-black text-blue-950 mb-6 leading-tight">จุดเริ่มจากความใส่ใจ<br>สู่มาตรฐานน้ำดื่ม BOOM FRESH</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        แบรนด์ **BOOM FRESH** ไม่ได้เริ่มต้นจากโรงงานผลิตทั่วไป แต่เกิดขึ้นจากความมุ่งมั่นของ **คุณบูม** ผู้ริเริ่มและบุกเบิกน้ำดื่มที่ต้องการสร้างมาตรฐานใหม่ของความสะอาดให้คนในพื้นที่ **ตำบลเขาทราย อำเภอทับคล้อ จังหวัดพิจิตร** และพื้นที่ใกล้เคียงได้เข้าถึงน้ำดื่มที่มีคุณภาพสูงสุด
-                    </p>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        ด้วยวิสัยทัศน์ที่คุณบูมต้องการให้ทุกคนมีสุขภาพดี จึงเฟ้นหาเทคโนโลยีการกรองที่ดีที่สุด และออกแบบระบบการผลิตที่พิถีพิถันในทุกขั้นตอน จนกลายเป็นแบรนด์ที่ได้รับความไว้วางใจ ทั้งในด้านน้ำดื่มสะอาดและบริการสร้างแบรนด์ (OEM) ที่ตอบโจทย์ธุรกิจอย่างมืออาชีพ
-                    </p>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div>
-                            <p class="text-3xl font-black text-blue-900 mb-1">Founder</p>
-                            <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Inspiration</p>
-                        </div>
-                        <div>
-                            <p class="text-3xl font-black text-blue-900 mb-1">Pioneer</p>
-                            <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Of Freshness</p>
+
+                <!-- ฝั่งข้อความ -->
+                <div class="lg:w-1/2 w-full">
+                    <div class="lg:pl-8">
+                        <h2 class="text-blue-600 font-bold text-xs tracking-[0.4em] mb-4 uppercase">The Origin</h2>
+                        <h3 class="text-4xl font-black text-blue-950 mb-6 leading-tight">จุดเริ่มจากความใส่ใจ<br>สู่มาตรฐานน้ำดื่ม BOOM FRESH</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            แบรนด์ **BOOM FRESH** ไม่ได้เริ่มต้นจากโรงงานผลิตทั่วไป แต่เกิดขึ้นจากความมุ่งมั่นของ **คุณบูม** ผู้ริเริ่มและบุกเบิกน้ำดื่มที่ต้องการสร้างมาตรฐานใหม่ของความสะอาดให้คนในพื้นที่ **ตำบลเขาทราย อำเภอทับคล้อ จังหวัดพิจิตร** และพื้นที่ใกล้เคียงได้เข้าถึงน้ำดื่มที่มีคุณภาพสูงสุด
+                        </p>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            ด้วยวิสัยทัศน์ที่คุณบูมต้องการให้ทุกคนมีสุขภาพดี จึงเฟ้นหาเทคโนโลยีการกรองที่ดีที่สุด และออกแบบระบบการผลิตที่พิถีพิถันในทุกขั้นตอน จนกลายเป็นแบรนด์ที่ได้รับความไว้วางใจ ทั้งในด้านน้ำดื่มสะอาดและบริการสร้างแบรนด์ (OEM) ที่ตอบโจทย์ธุรกิจอย่างมืออาชีพ
+                        </p>
+                        <div class="grid grid-cols-2 gap-8 border-t border-gray-100 pt-8">
+                            <div>
+                                <p class="text-3xl font-black text-blue-900 mb-1">Founder</p>
+                                <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Inspiration</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-black text-blue-900 mb-1">Pioneer</p>
+                                <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Of Freshness</p>
+                            </div>
                         </div>
                     </div>
                 </div>
