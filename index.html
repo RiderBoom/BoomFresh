@@ -5,10 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOOM FRESH | น้ำดื่มสะอาด โดยผู้ริเริ่มแบรนด์บูมเฟรช</title>
     
-    <!-- Meta Tags สำหรับ SEO และ Social Media -->
-    <meta name="description" content="น้ำดื่มสะอาด มาตรฐาน RO UV Ozone รับทำแบรนด์น้ำดื่ม OEM จังหวัดพิจิตร โดย BOOM FRESH">
-    <meta property="og:title" content="BOOM FRESH | น้ำดื่มสะอาด มาตรฐานสากล">
-    <meta property="og:description" content="รับทำแบรนด์น้ำดื่มและสั่งซื้อน้ำดื่มสะอาด ต.เขาทราย อ.ทับคล้อ จ.พิจิตร">
+    <!-- Favicon (โลโก้บนแถบบราวเซอร์) -->
+    <link rel="icon" type="image/jpeg" href="ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (3).jpg">
+    
+    <!-- Meta Tags สำหรับ SEO และ Social Media (Open Graph) -->
+    <!-- สิ่งนี้จะโชว์เมื่อคุณนำลิงก์ไปวางใน Facebook / LINE / Social Media -->
+    <meta name="description" content="น้ำดื่มสะอาด มาตรฐาน RO UV Ozone รับทำแบรนด์น้ำดื่ม OEM จังหวัดพิจิตร โดย BOOM FRESH สดชื่น ปลอดภัย มั่นใจทุกหยด">
+    
+    <!-- Facebook / LINE / อื่นๆ -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-website-link.com/"> <!-- ใส่ URL เว็บจริงของคุณตรงนี้ภายหลัง -->
+    <meta property="og:title" content="BOOM FRESH | น้ำดื่มมาตรฐานสากล - สั่งซื้อและรับทำแบรนด์ OEM">
+    <meta property="og:description" content="สัมผัสความสดชื่นกับน้ำดื่มสะอาด 6 ขั้นตอนมาตรฐานสากล พร้อมบริการรับผลิตน้ำดื่มแบรนด์ตัวเอง ต.เขาทราย จ.พิจิตร">
+    <meta property="og:image" content="ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (3).jpg"> <!-- รูปที่จะโชว์ในแถบพรีวิว -->
+    <meta property="og:site_name" content="BOOM FRESH">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BOOM FRESH | น้ำดื่มสะอาด โดยผู้ริเริ่มแบรนด์บูมเฟรช">
+    <meta name="twitter:description" content="น้ำดื่มสะอาด มาตรฐาน RO UV Ozone รับผลิต OEM จังหวัดพิจิตร">
+    <meta name="twitter:image" content="ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (3).jpg">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;600;800&display=swap" rel="stylesheet">
@@ -138,6 +154,22 @@
             border-radius: 2rem;
             box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
+        
+        /* สไตล์พิเศษสำหรับป้าย SVG Signature */
+        .signature-badge {
+            position: absolute;
+            bottom: -24px;
+            right: -24px;
+            background: var(--deep-blue);
+            color: white;
+            padding: 2rem;
+            border-radius: 2rem;
+            box-shadow: 0 15px 35px rgba(2, 62, 138, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 20;
+        }
     </style>
 </head>
 <body>
@@ -218,9 +250,14 @@
                     <div class="story-image-container">
                         <!-- โลโก้แบรนด์ -->
                         <img src="ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (3).jpg" alt="Boom Fresh Logo" class="rounded-2xl w-full h-auto object-contain">
-                        <div class="absolute -bottom-6 -right-6 bg-blue-900 text-white p-8 rounded-3xl hidden md:block shadow-xl">
-                            <p class="text-4xl font-black italic">By</p>
-                            <p class="text-xs uppercase tracking-widest font-bold">Boom Fresh Founder</p>
+                        
+                        <!-- ป้าย SVG Signature แบบใหม่ -->
+                        <div class="signature-badge hidden md:flex">
+                            <svg width="80" height="40" viewBox="0 0 100 50" class="mb-2">
+                                <path d="M10,40 Q30,10 50,40 T90,10" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                <circle cx="90" cy="10" r="4" fill="#caf0f8" />
+                            </svg>
+                            <p class="text-xs uppercase tracking-[0.2em] font-bold text-blue-100">Boom Fresh Founder</p>
                         </div>
                     </div>
                 </div>
