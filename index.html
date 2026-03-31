@@ -155,6 +155,10 @@
             padding: 20px;
             border-radius: 2rem;
             box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
         }
         
         .signature-badge {
@@ -248,8 +252,16 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center gap-16">
                 <div class="lg:w-1/2">
-                    <div class="story-image-container">
-                        <img src="ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (3).jpg" alt="Boom Fresh Logo" class="rounded-2xl w-full h-auto object-contain">
+                    <div class="story-image-container bg-blue-50/50">
+                        <!-- ปรับปรุง: นำแท็ก img ที่โหลดไม่ขึ้นออก และใช้ SVG Icon เป็นตัวแทนที่ดูหรูหราแทน -->
+                        <div class="flex flex-col items-center justify-center space-y-4">
+                            <svg width="120" height="120" viewBox="0 0 100 100" class="drop-shadow-xl">
+                                <path d="M50 5 L90 25 L90 75 L50 95 L10 75 L10 25 Z" fill="#023e8a"/>
+                                <path d="M50 15 L80 30 L80 70 L50 85 L20 70 L20 30 Z" fill="#0077b6" opacity="0.5"/>
+                                <text x="50" y="65" font-family="Arial" font-size="40" fill="white" text-anchor="middle" font-weight="900">B</text>
+                            </svg>
+                            <p class="text-blue-900 font-black tracking-[0.2em] uppercase text-xl">BOOM FRESH</p>
+                        </div>
                         
                         <div class="signature-badge hidden md:flex">
                             <svg width="80" height="40" viewBox="0 0 100 50" class="mb-2">
