@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOM FRESH | น้ำดื่มสะอาด มาตรฐานสากล จ.พิจิตร</title>
+
+    <meta name="description" content="น้ำดื่มสะอาด ปลอดภัย มาตรฐาน RO UV Ozone รับทำแบรนด์น้ำดื่ม OEM จังหวัดพิจิตร โดย BOOM FRESH">
+    <meta name="keywords" content="น้ำดื่ม,พิจิตร,OEM,แบรนด์น้ำดื่ม,BOOM FRESH,น้ำดื่มสะอาด,ทับคล้อ">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://boom-fresh.vercel.app">
+
+    <meta property="og:title" content="BOOM FRESH | น้ำดื่มสะอาด มาตรฐานสากล">
+    <meta property="og:description" content="รับทำแบรนด์น้ำดื่มและสั่งซื้อน้ำดื่มสะอาด ต.เขาทราย อ.ทับคล้อ จ.พิจิตร">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://boom-fresh.vercel.app">
+    <meta property="og:locale" content="th_TH">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "BOOM FRESH",
+      "description": "น้ำดื่มสะอาด มาตรฐาน RO UV Ozone รับทำแบรนด์น้ำดื่ม OEM",
+      "url": "https://boom-fresh.vercel.app",
+      "telephone": "+66950524447",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "ต.เขาทราย อ.ทับคล้อ",
+        "addressRegion": "พิจิตร",
+        "addressCountry": "TH"
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }],
+      "priceRange": "฿"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy:      #0a1628;
+            --deep-blue: #023e8a;
+            --mid-blue:  #0077b6;
+            --sky:       #90e0ef;
+            --light-sky: #caf0f8;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: #fff;
+            color: #0f172a;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ── NAVBAR ── */
+        #navbar { transition: padding .35s ease, box-shadow .35s ease, background .35s ease; }
+        #navbar.scrolled {
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+            box-shadow: 0 4px 30px rgba(0,0,0,.07);
+            background: rgba(255,255,255,.97) !important;
+        }
+
+        /* ── TYPOGRAPHY ── */
+        .text-gradient {
+            background: linear-gradient(135deg, var(--deep-blue), var(--mid-blue), #48cae4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--mid-blue);
+        }
+        .section-label::before,
+        .section-label::after { content:''; display:block; width:24px; height:1px; background:var(--mid-blue); }
+
+        /* ── HERO ── */
+        .hero-bg {
+            background: linear-gradient(155deg, #f0f9ff 0%, #e0f2fe 45%, #bae6fd 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.75), rgba(186,230,253,.25));
+            border: 1px solid rgba(255,255,255,.55);
+            animation: bubble-rise linear infinite;
+            pointer-events: none;
+        }
+        @keyframes bubble-rise {
+            0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+            8%   { opacity: 1; }
+            92%  { opacity: .4; }
+            100% { transform: translateY(-15vh) scale(1); opacity: 0; }
+        }
+        .bottle-float {
+            animation: float 5.5s ease-in-out infinite;
+            filter: drop-shadow(0 28px 36px rgba(2,62,138,.18));
+        }
+        @keyframes float {
+            0%,100% { transform: translateY(0) rotate(-2deg); }
+            50%      { transform: translateY(-28px) rotate(2deg); }
+        }
+        .ring-spin-slow  { animation: spin 20s linear infinite; }
+        .ring-spin-rev   { animation: spin 14s linear infinite reverse; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ── CARDS / STEPS ── */
+        .step-card {
+            background: #fff;
+            border-radius: 1.25rem;
+            padding: 1.75rem 1.25rem;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 2px 12px rgba(0,0,0,.04);
+            transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .4s ease, border-color .4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .step-card::after {
+            content:'';
+            position:absolute; bottom:0; left:0; right:0; height:3px;
+            background: linear-gradient(90deg, var(--deep-blue), var(--mid-blue));
+            transform: scaleX(0);
+            transition: transform .3s ease;
+        }
+        .step-card:hover { transform: translateY(-12px); box-shadow: 0 24px 48px rgba(2,62,138,.12); border-color: transparent; }
+        .step-card:hover::after { transform: scaleX(1); }
+
+        .step-icon {
+            width:56px; height:56px;
+            background: linear-gradient(135deg,#e0f2fe,#bae6fd);
+            border-radius:1rem;
+            display:flex; align-items:center; justify-content:center;
+            margin: 0 auto 1rem;
+            color: var(--deep-blue);
+        }
+
+        /* ── STATS ── */
+        .counter {
+            font-size: 3.25rem;
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--deep-blue), var(--mid-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ── OEM CARDS ── */
+        .oem-card {
+            background: #fff;
+            border-radius: 1.5rem;
+            padding: 2.5rem 2rem;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 20px rgba(0,0,0,.04);
+            transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease;
+            text-align: center;
+        }
+        .oem-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(2,62,138,.1); border-color: var(--light-sky); }
+
+        /* ── QR SECTION ── */
+        .qr-section {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 60%, var(--mid-blue) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .qr-section::before {
+            content:''; position:absolute; top:-40%; right:-15%;
+            width:500px; height:500px; border-radius:50%;
+            background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.05);
+        }
+        .qr-section::after {
+            content:''; position:absolute; bottom:-30%; left:-10%;
+            width:380px; height:380px; border-radius:50%;
+            background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.04);
+        }
+        .qr-box {
+            background: #fff;
+            border-radius: 2rem;
+            padding: 2.5rem;
+            box-shadow: 0 40px 80px rgba(0,0,0,.28);
+            max-width: 360px;
+            width: 100%;
+        }
+
+        /* ── CONTACT CARDS ── */
+        .contact-card {
+            background: #fff;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 20px rgba(0,0,0,.04);
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+        }
+        .contact-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(2,62,138,.08); border-color: var(--light-sky); }
+
+        /* ── MOBILE MENU ── */
+        #mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 60;
+            background: #fff;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+        #mobile-menu.open { display: flex; }
+
+        /* ── SCROLL-TO-TOP ── */
+        #scroll-top {
+            position: fixed;
+            bottom: 1.75rem;
+            right: 1.75rem;
+            width: 46px; height: 46px;
+            background: var(--deep-blue);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity .3s ease, transform .3s ease, background .3s ease;
+            z-index: 50;
+            box-shadow: 0 8px 24px rgba(2,62,138,.3);
+        }
+        #scroll-top.visible { opacity: 1; transform: translateY(0); }
+        #scroll-top:hover  { background: var(--mid-blue); transform: translateY(-2px); }
+
+        /* ── SCROLL ANIMATIONS ── */
+        .anim {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+        }
+        .anim.d1 { transition-delay: .08s; }
+        .anim.d2 { transition-delay: .16s; }
+        .anim.d3 { transition-delay: .24s; }
+        .anim.d4 { transition-delay: .32s; }
+        .anim.d5 { transition-delay: .40s; }
+        .anim.d6 { transition-delay: .48s; }
+        .anim.in { opacity:1; transform:translateY(0); }
+
+        /* ── BUTTONS ── */
+        .btn-p {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--deep-blue);
+            color: #fff;
+            padding: .9rem 2.25rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: .9rem;
+            transition: background .3s, transform .3s, box-shadow .3s;
+            box-shadow: 0 8px 24px rgba(2,62,138,.22);
+        }
+        .btn-p:hover { background: var(--mid-blue); transform: translateY(-2px); box-shadow: 0 16px 32px rgba(0,119,182,.28); }
+        .btn-s {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: transparent;
+            color: var(--deep-blue);
+            padding: .9rem 2.25rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: .9rem;
+            border: 2px solid var(--deep-blue);
+            transition: background .3s, color .3s, transform .3s;
+        }
+        .btn-s:hover { background: var(--deep-blue); color: #fff; transform: translateY(-2px); }
+
+        @media (max-width:640px) { .hero-title { font-size: 3.5rem !important; } }
+    </style>
+</head>
+<body>
+
+<!-- ── MOBILE MENU ── -->
+<div id="mobile-menu" role="dialog" aria-modal="true">
+    <button id="close-menu" class="absolute top-6 right-6 text-gray-400 hover:text-gray-700 transition" aria-label="ปิด">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+    </button>
+    <a href="#story"   class="text-3xl font-black text-blue-900 hover:text-blue-600 transition">เรื่องราว</a>
+    <a href="#process" class="text-3xl font-black text-blue-900 hover:text-blue-600 transition">มาตรฐาน</a>
+    <a href="#oem"     class="text-3xl font-black text-blue-900 hover:text-blue-600 transition">OEM</a>
+    <a href="#agent"   class="text-3xl font-black text-blue-900 hover:text-blue-600 transition">สั่งซื้อ</a>
+    <a href="#contact" class="text-3xl font-black text-blue-900 hover:text-blue-600 transition">ติดต่อ</a>
+    <a href="tel:0950524447" class="btn-p mt-4">📞 095-052-4447</a>
+</div>
+
+<!-- ── SCROLL TO TOP ── -->
+<button id="scroll-top" aria-label="กลับขึ้นด้านบน">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+    </svg>
+</button>
+
+<!-- ══════════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════════ -->
+<nav id="navbar" class="fixed w-full z-50 py-5 bg-white/80 backdrop-blur-md border-b border-gray-100/70">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+
+        <a href="#" class="flex items-center gap-2.5">
+            <div class="w-10 h-10 bg-blue-900 rounded-xl flex items-center justify-center shadow-lg">
+                <span class="text-white font-black text-lg leading-none">B</span>
+            </div>
+            <span class="text-lg font-black text-blue-950 tracking-tight">BOOM FRESH</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-[11px] font-bold uppercase tracking-widest text-gray-500">
+            <a href="#story"   class="hover:text-blue-600 transition-colors">เรื่องราว</a>
+            <a href="#process" class="hover:text-blue-600 transition-colors">มาตรฐาน</a>
+            <a href="#oem"     class="hover:text-blue-600 transition-colors">OEM</a>
+            <a href="#agent"   class="hover:text-blue-600 transition-colors">สั่งซื้อ</a>
+            <a href="#contact" class="hover:text-blue-600 transition-colors">ติดต่อ</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <a href="tel:0950524447" class="hidden sm:flex btn-p !py-2.5 !px-5 !text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+                โทรเลย
+            </a>
+            <button id="hamburger" class="md:hidden p-2 text-gray-600" aria-label="เมนู">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<section class="hero-bg flex items-center pt-24 pb-0 min-h-screen overflow-hidden">
+    <div id="bubbles" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+
+    <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10 pb-16">
+
+        <!-- Left copy -->
+        <div>
+            <div class="section-label anim mb-5">Premium Quality · ระดับสากล</div>
+            <h1 class="hero-title text-7xl md:text-8xl font-black text-blue-950 leading-[.88] mb-6 anim d1">
+                ระเบิดความ<br><span class="text-gradient">สดชื่น.</span>
+            </h1>
+            <p class="text-lg text-gray-500 mb-10 max-w-md font-light leading-relaxed anim d2">
+                น้ำดื่มสะอาด ปลอดภัย เพื่อสุขภาพที่ดีของคุณและแบรนด์ของคุณ ด้วยมาตรฐานการผลิต RO UV Ozone ที่ทันสมัยที่สุด
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 anim d3">
+                <a href="#agent" class="btn-p">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                    สั่งซื้อสินค้า
+                </a>
+                <a href="https://shop.line.me/@zso0133z" target="_blank" rel="noopener" class="btn-s">
+                    รับทำแบรนด์ OEM
+                </a>
+            </div>
+        </div>
+
+        <!-- Right bottle -->
+        <div class="flex justify-center lg:justify-end items-center relative anim d2">
+            <div class="absolute w-80 h-80 border border-blue-200/50 rounded-full ring-spin-slow"></div>
+            <div class="absolute w-60 h-60 border border-blue-300/30 rounded-full ring-spin-rev"></div>
+            <div class="bottle-float">
+                <svg width="255" height="470" viewBox="0 0 100 220">
+                    <defs>
+                        <linearGradient id="bG" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%"   style="stop-color:#e0f2fe"/>
+                            <stop offset="100%" style="stop-color:#7dd3fc"/>
+                        </linearGradient>
+                        <linearGradient id="wG" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%"   style="stop-color:#93c5fd;stop-opacity:.55"/>
+                            <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:.38"/>
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="2.5" result="b"/>
+                            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <path d="M35 28 L65 28 L70 48 L72 185 Q72 205 50 205 Q28 205 28 185 L30 48 Z"
+                          fill="url(#bG)" stroke="#93c5fd" stroke-width=".5" filter="url(#glow)"/>
+                    <path d="M31 100 L69 100 L72 185 Q72 205 50 205 Q28 205 28 185 L31 100 Z"
+                          fill="url(#wG)"/>
+                    <rect x="37" y="13" width="26" height="15" rx="3" fill="#023e8a"/>
+                    <rect x="39" y="11" width="22" height="5"  rx="2" fill="#0369a1"/>
+                    <rect x="27" y="80" width="46" height="60" fill="white" opacity=".95" rx="3"/>
+                    <circle cx="50" cy="100" r="14" fill="#023e8a" filter="url(#glow)"/>
+                    <text x="50" y="105" font-family="Arial" font-size="13" fill="white" text-anchor="middle" font-weight="900">B</text>
+                    <text x="50" y="122" font-family="Arial" font-size="4.5" fill="#023e8a" text-anchor="middle" font-weight="800" letter-spacing="1">BOOM FRESH</text>
+                    <text x="50" y="130" font-family="Arial" font-size="3"   fill="#64748b" text-anchor="middle">น้ำดื่มสะอาด</text>
+                    <path d="M36 55 Q33 100 34 150" stroke="white" stroke-width="2.5" fill="none" opacity=".55" stroke-linecap="round"/>
+                    <path d="M39 48 Q37 70 38 90" stroke="white" stroke-width="1" fill="none" opacity=".3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wave divider -->
+    <div class="absolute bottom-0 left-0 right-0 leading-[0]">
+        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="white"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TRUST STRIP
+══════════════════════════════════════════════ -->
+<section class="bg-[#0a1628] py-5">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-wrap justify-center md:justify-between items-center gap-5">
+            <div class="flex items-center gap-2 text-white/60">
+                <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-[10px] font-bold tracking-[.2em] uppercase">มาตรฐาน RO</span>
+            </div>
+            <div class="w-px h-4 bg-white/15 hidden md:block"></div>
+            <div class="flex items-center gap-2 text-white/60">
+                <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-[10px] font-bold tracking-[.2em] uppercase">UV Sterilization</span>
+            </div>
+            <div class="w-px h-4 bg-white/15 hidden md:block"></div>
+            <div class="flex items-center gap-2 text-white/60">
+                <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-[10px] font-bold tracking-[.2em] uppercase">Ozone Technology</span>
+            </div>
+            <div class="w-px h-4 bg-white/15 hidden md:block"></div>
+            <div class="flex items-center gap-2 text-white/60">
+                <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-[10px] font-bold tracking-[.2em] uppercase">Technology from USA</span>
+            </div>
+            <div class="w-px h-4 bg-white/15 hidden md:block"></div>
+            <div class="flex items-center gap-2 text-white/60">
+                <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+                <span class="text-[10px] font-bold tracking-[.2em] uppercase">ลูกค้าไว้ใจ 100+</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     STORY
+══════════════════════════════════════════════ -->
+<section id="story" class="py-28 bg-white overflow-hidden">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-20">
+
+            <!-- Image side -->
+            <div class="lg:w-5/12 anim">
+                <div class="relative">
+                    <div class="relative bg-gradient-to-br from-blue-50 to-sky-100 rounded-3xl p-8 shadow-2xl">
+                        <img id="story-img"
+                             src="ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (3).png"
+                             alt="BOOM FRESH โลโก้แบรนด์น้ำดื่ม"
+                             class="rounded-2xl w-full h-auto object-contain">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-blue-900 text-white px-6 py-4 rounded-2xl shadow-xl hidden md:block">
+                        <p class="text-3xl font-black">Founder</p>
+                        <p class="text-[10px] uppercase tracking-widest opacity-70 font-bold mt-0.5">คุณบูม · ผู้ก่อตั้ง</p>
+                    </div>
+                    <div class="absolute -top-4 -left-4 w-16 h-16 bg-sky-200 rounded-full opacity-60"></div>
+                    <div class="absolute -top-1 -left-1 w-6  h-6  bg-blue-400 rounded-full opacity-80"></div>
+                </div>
+            </div>
+
+            <!-- Text side -->
+            <div class="lg:w-7/12 anim d2">
+                <div class="section-label mb-5">The Origin · จุดเริ่มต้น</div>
+                <h3 class="text-4xl md:text-5xl font-black text-blue-950 mb-8 leading-tight">
+                    จุดเริ่มจากความใส่ใจ<br>สู่มาตรฐานน้ำดื่ม<br><span class="text-gradient">BOOM FRESH</span>
+                </h3>
+                <p class="text-gray-500 mb-6 leading-relaxed text-lg font-light">
+                    แบรนด์ BOOM FRESH ไม่ได้เริ่มต้นจากโรงงานผลิตทั่วไป แต่เกิดขึ้นจากความมุ่งมั่นของ
+                    <strong class="text-blue-900 font-bold">คุณบูม</strong> ผู้ริเริ่มและบุกเบิกน้ำดื่มที่ต้องการสร้างมาตรฐานใหม่ของความสะอาด
+                    ให้คนในพื้นที่ <strong class="text-blue-900 font-bold">ตำบลเขาทราย อำเภอทับคล้อ จังหวัดพิจิตร</strong> ได้เข้าถึงน้ำดื่มคุณภาพสูงสุด
+                </p>
+                <p class="text-gray-500 mb-10 leading-relaxed text-lg font-light">
+                    ด้วยวิสัยทัศน์ที่ต้องการให้ทุกคนมีสุขภาพดี จึงเฟ้นหาเทคโนโลยีการกรองที่ดีที่สุด
+                    และออกแบบระบบการผลิตที่พิถีพิถันในทุกขั้นตอน จนกลายเป็นแบรนด์ที่ได้รับความไว้วางใจ
+                    ทั้งในด้านน้ำดื่มสะอาดและบริการสร้างแบรนด์ (OEM) อย่างมืออาชีพ
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-blue-50 rounded-2xl p-5">
+                        <p class="text-4xl font-black text-blue-900 mb-1">6 ขั้นตอน</p>
+                        <p class="text-xs text-blue-500 font-bold uppercase tracking-wider">กระบวนการกรองน้ำ</p>
+                    </div>
+                    <div class="bg-sky-50 rounded-2xl p-5">
+                        <p class="text-4xl font-black text-blue-900 mb-1">100%</p>
+                        <p class="text-xs text-blue-500 font-bold uppercase tracking-wider">มั่นใจในคุณภาพ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PROCESS
+══════════════════════════════════════════════ -->
+<section id="process" class="py-28 bg-gray-50/80">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16 anim">
+            <div class="section-label">Our Process · กระบวนการผลิต</div>
+            <h3 class="text-4xl md:text-5xl font-black text-blue-950 mt-5">6 ขั้นตอนความสะอาด<br>ที่คุณมั่นใจ</h3>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+
+            <div class="step-card text-center anim d1">
+                <div class="step-icon">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                </div>
+                <span class="block text-[9px] font-black text-blue-200 tracking-widest mb-2">STEP 01</span>
+                <p class="text-sm font-bold text-blue-900">กรองตะกอน</p>
+                <p class="text-[10px] text-gray-400 mt-1">Sediment Filter</p>
+            </div>
+
+            <div class="step-card text-center anim d2">
+                <div class="step-icon">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <span class="block text-[9px] font-black text-blue-200 tracking-widest mb-2">STEP 02</span>
+                <p class="text-sm font-bold text-blue-900">กรองคาร์บอน</p>
+                <p class="text-[10px] text-gray-400 mt-1">Carbon Filter</p>
+            </div>
+
+            <div class="step-card text-center anim d3">
+                <div class="step-icon">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                </div>
+                <span class="block text-[9px] font-black text-blue-200 tracking-widest mb-2">STEP 03</span>
+                <p class="text-sm font-bold text-blue-900">กรองเรซิ่น</p>
+                <p class="text-[10px] text-gray-400 mt-1">Resin Filter</p>
+            </div>
+
+            <div class="step-card text-center anim d4">
+                <div class="step-icon">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5"/></svg>
+                </div>
+                <span class="block text-[9px] font-black text-blue-200 tracking-widest mb-2">STEP 04</span>
+                <p class="text-sm font-bold text-blue-900">ระบบ RO</p>
+                <p class="text-[10px] text-gray-400 mt-1">Reverse Osmosis</p>
+            </div>
+
+            <div class="step-card text-center anim d5">
+                <div class="step-icon">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </div>
+                <span class="block text-[9px] font-black text-blue-200 tracking-widest mb-2">STEP 05</span>
+                <p class="text-sm font-bold text-blue-900">ฆ่าเชื้อ UV</p>
+                <p class="text-[10px] text-gray-400 mt-1">UV Sterilization</p>
+            </div>
+
+            <div class="step-card text-center anim d6">
+                <div class="step-icon">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <span class="block text-[9px] font-black text-blue-200 tracking-widest mb-2">STEP 06</span>
+                <p class="text-sm font-bold text-blue-900">โอโซน</p>
+                <p class="text-[10px] text-gray-400 mt-1">Ozone Treatment</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     STATS
+══════════════════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <div class="text-center anim d1">
+                <div class="counter" data-target="6" data-suffix="">0</div>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mt-2">ขั้นตอนการกรอง</p>
+            </div>
+            <div class="text-center anim d2">
+                <div class="counter" data-target="100" data-suffix="+">0</div>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mt-2">ลูกค้าไว้ใจ</p>
+            </div>
+            <div class="text-center anim d3">
+                <div class="counter" data-target="3" data-suffix=" ระบบ">0</div>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mt-2">เทคโนโลยีทำความสะอาด</p>
+            </div>
+            <div class="text-center anim d4">
+                <div class="counter" data-target="100" data-suffix="%">0</div>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mt-2">มั่นใจในคุณภาพ</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     OEM
+══════════════════════════════════════════════ -->
+<section id="oem" class="py-28 bg-gray-50/80">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16 anim">
+            <div class="section-label">OEM Service · บริการสร้างแบรนด์</div>
+            <h3 class="text-4xl md:text-5xl font-black text-blue-950 mt-5">สร้างแบรนด์น้ำดื่มของคุณ<br><span class="text-gradient">กับเรา</span></h3>
+            <p class="text-gray-500 mt-4 max-w-xl mx-auto font-light">บริการ OEM ครบวงจร สำหรับธุรกิจที่ต้องการสร้างแบรนด์น้ำดื่มเป็นของตัวเอง</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="oem-card anim d1">
+                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-7 h-7 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                </div>
+                <h4 class="text-xl font-black text-blue-950 mb-3">ออกแบบฉลาก</h4>
+                <p class="text-gray-500 text-sm font-light leading-relaxed">ออกแบบฉลากตามแบรนด์ของคุณ ด้วยทีมออกแบบมืออาชีพ รองรับทุกขนาดขวด</p>
+            </div>
+            <div class="oem-card anim d2">
+                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-7 h-7 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <h4 class="text-xl font-black text-blue-950 mb-3">มาตรฐานการผลิต</h4>
+                <p class="text-gray-500 text-sm font-light leading-relaxed">ผลิตด้วยระบบ RO UV Ozone เดียวกับแบรนด์หลัก รับรองคุณภาพทุกขวด ถึงมือลูกค้า</p>
+            </div>
+            <div class="oem-card anim d3">
+                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-7 h-7 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <h4 class="text-xl font-black text-blue-950 mb-3">สนับสนุนตัวแทน</h4>
+                <p class="text-gray-500 text-sm font-light leading-relaxed">ระบบตัวแทนจำหน่าย พร้อมสนับสนุนการตลาด เพิ่มรายได้ให้ธุรกิจของคุณ</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-12 anim">
+            <a href="https://shop.line.me/@zso0133z" target="_blank" rel="noopener" class="btn-p">
+                ปรึกษาบริการ OEM ฟรี
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     ORDER / QR
+══════════════════════════════════════════════ -->
+<section id="agent" class="py-28 qr-section">
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+
+            <!-- Left text -->
+            <div class="flex-1 text-center lg:text-left text-white anim">
+                <div class="inline-flex items-center gap-2 text-blue-300 text-[10px] font-bold tracking-[.3em] uppercase mb-6">
+                    <span class="w-6 h-px bg-blue-400"></span>
+                    Order &amp; Agent · สั่งซื้อ &amp; ตัวแทน
+                </div>
+                <h3 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
+                    สแกนเพื่อสั่งสินค้า<br>และสมัครตัวแทน
+                </h3>
+                <p class="text-xl text-blue-200 font-light mb-10 max-w-xl leading-relaxed">
+                    พร้อมให้บริการน้ำดื่มคุณภาพมาตรฐานสากล แสกนเพื่อพูดคุยและสั่งซื้อผ่าน LINE ได้ทันที
+                </p>
+                <div class="bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-8 py-4 inline-block text-center">
+                    <span class="block text-[10px] uppercase tracking-widest text-blue-300 mb-1">โทรศัพท์ฝ่ายขาย</span>
+                    <a href="tel:0950524447" class="text-3xl font-black hover:text-blue-300 transition">095-052-4447</a>
+                </div>
+                <div class="flex items-center gap-2 text-blue-300 text-sm mt-5 justify-center lg:justify-start">
+                    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    จันทร์ – เสาร์ เวลา 08:00 – 17:00 น.
+                </div>
+            </div>
+
+            <!-- QR box -->
+            <div class="qr-box anim d2">
+                <div class="text-center mb-5">
+                    <span class="text-blue-900 font-black text-xl tracking-tight">LINE SHOPPING</span>
+                    <div class="w-10 h-1 bg-gradient-to-r from-blue-600 to-sky-400 mx-auto mt-2 rounded-full"></div>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-4 mb-5 border border-gray-100">
+                    <img src="31123123.png"
+                         alt="BOOM FRESH LINE SHOPPING QR CODE"
+                         class="w-full h-auto"
+                         onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://shop.line.me/@zso0133z&bgcolor=f8fafc&color=023e8a'">
+                </div>
+                <a href="https://shop.line.me/@zso0133z"
+                   target="_blank"
+                   rel="noopener"
+                   class="flex items-center justify-center gap-2 w-full bg-[#06C755] text-white py-4 rounded-xl font-bold hover:bg-[#05b34c] transition-colors shadow-lg">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 10.3c0-4.7-5.4-8.5-12-8.5S0 5.6 0 10.3c0 4.2 4.3 7.7 10.1 8.4.4.1.9.3 1.1.7l.4 1.7s.1.5.5.6c.3.1.6 0 .6 0l5.5-5.3c1.7-1.7 2.7-3.8 2.7-6.1z"/></svg>
+                    เปิด LINE SHOPPING ทันที
+                </a>
+                <p class="text-center text-[10px] text-gray-400 mt-3">@zso0133z</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════════ -->
+<section id="contact" class="py-28 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16 anim">
+            <div class="section-label">Contact Us · ติดต่อเรา</div>
+            <h3 class="text-4xl md:text-5xl font-black text-blue-950 mt-5">ช่องทางการติดต่อ</h3>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div class="contact-card anim d1">
+                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <h4 class="text-lg font-bold text-blue-950 mb-3">ที่อยู่</h4>
+                <p class="text-gray-500 leading-relaxed text-sm">ต.เขาทราย อ.ทับคล้อ<br>จ.พิจิตร</p>
+            </div>
+
+            <div class="contact-card anim d2">
+                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </div>
+                <h4 class="text-lg font-bold text-blue-950 mb-3">โทรศัพท์</h4>
+                <a href="tel:0950524447" class="text-gray-500 hover:text-blue-700 transition-colors font-medium block">095-052-4447</a>
+                <p class="text-xs text-gray-400 mt-1">ฝ่ายขาย</p>
+            </div>
+
+            <div class="contact-card anim d3">
+                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h4 class="text-lg font-bold text-blue-950 mb-3">เวลาทำการ</h4>
+                <p class="text-gray-500 text-sm">จันทร์ – เสาร์</p>
+                <p class="text-blue-700 font-bold">08:00 – 17:00 น.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer class="bg-[#0a1628] py-16">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div>
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-black text-lg leading-none">B</span>
+                    </div>
+                    <span class="text-white font-black text-lg">BOOM FRESH</span>
+                </div>
+                <p class="text-white/40 text-xs">น้ำดื่มสะอาด มาตรฐานสากล จ.พิจิตร</p>
+            </div>
+
+            <nav class="flex flex-wrap justify-center gap-6 text-white/50 text-xs">
+                <a href="#story"   class="hover:text-white transition-colors">เรื่องราว</a>
+                <a href="#process" class="hover:text-white transition-colors">มาตรฐาน</a>
+                <a href="#oem"     class="hover:text-white transition-colors">OEM</a>
+                <a href="#agent"   class="hover:text-white transition-colors">สั่งซื้อ</a>
+                <a href="#contact" class="hover:text-white transition-colors">ติดต่อ</a>
+            </nav>
+
+            <a href="https://shop.line.me/@zso0133z"
+               target="_blank" rel="noopener"
+               class="flex items-center gap-2 bg-[#06C755]/15 hover:bg-[#06C755]/25 text-[#06C755] border border-[#06C755]/30 px-5 py-2.5 rounded-full text-sm font-bold transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 10.3c0-4.7-5.4-8.5-12-8.5S0 5.6 0 10.3c0 4.2 4.3 7.7 10.1 8.4.4.1.9.3 1.1.7l.4 1.7s.1.5.5.6c.3.1.6 0 .6 0l5.5-5.3c1.7-1.7 2.7-3.8 2.7-6.1z"/></svg>
+                LINE SHOPPING
+            </a>
+        </div>
+
+        <div class="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-white/30 text-[11px] uppercase tracking-widest">&copy; 2026 BOOM FRESH WATER &middot; ALL RIGHTS RESERVED</p>
+            <p class="text-white/20 text-[10px] uppercase tracking-widest">TECHNOLOGY FROM USA &middot; PRODUCED IN PHICHIT, THAILAND</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════ -->
+<script>
+(function () {
+    'use strict';
+
+    /* ── Bubble particles ── */
+    var container = document.getElementById('bubbles');
+    for (var i = 0; i < 20; i++) {
+        var b = document.createElement('div');
+        b.className = 'bubble';
+        var s = Math.random() * 42 + 10;
+        b.style.cssText = [
+            'width:' + s + 'px',
+            'height:' + s + 'px',
+            'left:' + (Math.random() * 100) + '%',
+            'animation-duration:' + (Math.random() * 12 + 9) + 's',
+            'animation-delay:' + (Math.random() * 12) + 's'
+        ].join(';');
+        container.appendChild(b);
+    }
+
+    /* ── Navbar shrink on scroll ── */
+    var navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function () {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ── Mobile menu ── */
+    var menu      = document.getElementById('mobile-menu');
+    var hamburger = document.getElementById('hamburger');
+    var closeBtn  = document.getElementById('close-menu');
+
+    function openMenu()  { menu.classList.add('open');    document.body.style.overflow = 'hidden'; }
+    function closeMenu() { menu.classList.remove('open'); document.body.style.overflow = ''; }
+
+    hamburger.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+
+    /* ── Scroll-to-top ── */
+    var scrollTop = document.getElementById('scroll-top');
+    window.addEventListener('scroll', function () {
+        scrollTop.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    scrollTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ── Story image fallback ── */
+    var storyImg = document.getElementById('story-img');
+    storyImg.addEventListener('error', function () {
+        var wrap = storyImg.parentElement;
+        wrap.innerHTML = '<div class="flex items-center justify-center h-56">'
+            + '<div class="text-center">'
+            + '<div class="w-24 h-24 bg-blue-900 rounded-3xl flex items-center justify-center mx-auto mb-4"><span class="text-white font-black text-5xl leading-none">B</span></div>'
+            + '<p class="text-blue-900 font-black text-2xl">BOOM FRESH</p>'
+            + '<p class="text-blue-500 text-sm mt-1">น้ำดื่มสะอาด มาตรฐานสากล</p>'
+            + '</div></div>';
+    });
+
+    /* ── Intersection Observer: scroll animations ── */
+    var animEls = document.querySelectorAll('.anim');
+    var animObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            if (e.isIntersecting) {
+                e.target.classList.add('in');
+                animObs.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    animEls.forEach(function (el) { animObs.observe(el); });
+
+    /* ── Counter animation ── */
+    function runCounter(el) {
+        var target   = parseInt(el.dataset.target, 10);
+        var suffix   = el.dataset.suffix || '';
+        var duration = 1800;
+        var steps    = 60;
+        var inc      = target / steps;
+        var current  = 0;
+        var t = setInterval(function () {
+            current = Math.min(current + inc, target);
+            el.textContent = Math.floor(current) + suffix;
+            if (current >= target) clearInterval(t);
+        }, duration / steps);
+    }
+
+    var cntObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            if (e.isIntersecting) {
+                runCounter(e.target);
+                cntObs.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach(function (el) { cntObs.observe(el); });
+}());
+</script>
+</body>
+</html>
